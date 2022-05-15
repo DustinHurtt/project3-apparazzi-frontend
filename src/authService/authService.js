@@ -1,20 +1,29 @@
 import axios from "axios";
 import { baseUrl } from "./baseUrl";
 
-export const get = (route) => {
+// export const get = (route) => {
 
-    let token = localStorage.getItem('authToken')
+//     let token = localStorage.getItem('authToken')
 
-    axios.get(baseUrl + route, {headers: { Authorization: `Bearer ${token}`}})
-    .then((results) =>{
-        console.log(results.data)
-        return results.data
-    })
-    .catch((err) => {
-        console.log('Something went wrong', err.message)
-    })
+//     axios.get(baseUrl + route, {headers: { Authorization: `Bearer ${token}`}})
+//     .then((results) =>{
+//         console.log(results.data)
+//         return results.data
+//     })
+//     .catch((err) => {
+//         console.log('Something went wrong', err.message)
+//     })
     
-}
+// }
+
+export const get = (route) => {
+    let token = localStorage.getItem("authToken");
+  
+    return axios.get(baseUrl + route, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  };
+  
 
 export const post = (route, body) => {
 

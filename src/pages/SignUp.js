@@ -6,6 +6,7 @@ import Username from "../components/Username";
 import {post} from '../authService/authService';
 import { useNavigate } from "react-router-dom";
 
+
 const SignUp = () => {
 
     let [username, setUsername] = React.useState('')
