@@ -30,9 +30,16 @@ export const post = (route, body) => {
     let token = localStorage.getItem('authToken')
 
     return axios.post(baseUrl + route, body, {headers: { Authorization: `Bearer ${token}`}})
-
-    
+  
 }
+
+// export const postPhoto = (route, body) => {
+
+//     let token = localStorage.getItem('authToken')
+
+//     return axios.post(baseUrl + route, body, {headers: { Authorization: `Bearer ${token}`, "Content-Type": "multipart/form-data"}})
+  
+// }
 
 // export const signup = (body) => {
 //     post('/users/signup', body)

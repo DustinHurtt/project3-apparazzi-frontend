@@ -2,13 +2,13 @@ import React from "react";
 
 const TheseTags = (props) => {
 
-    console.log(props)
+    // console.log(props)
 
     return (
 
         <div>
       <p>    
-            {props.photo.tags.map((tag) => {
+            {props.photo.tags && props.photo.tags.map((tag) => {
         return (<span key={tag}>{tag} </span>);
       })}
 

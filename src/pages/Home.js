@@ -20,8 +20,8 @@ const Home = () => {
         let token = localStorage.getItem("authToken");
         console.log("This is the token", token)
         get("/users/login-test")
-            .then(() => {
-                console.log("Are we logged in?")
+            .then((results) => {
+                console.log("Are we logged in?", results.data)
             })
             .catch((err) => {
                 console.log(err.message)

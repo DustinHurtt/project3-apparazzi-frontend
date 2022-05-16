@@ -34,16 +34,9 @@ const AllPhotos = () => {
       {photos.map((photo) => {
         return (
           <div key={photo._id}>
-
-
-            
+          
                 <Photo photo={photo}/>
             
-
-
-
-
-
           </div>
         );
       })}

@@ -9,7 +9,7 @@ import Photo from "../components/Photo";
 
 const PhotoDetails = ({match}) => {
 
-    const [photo, setPhoto] = useState([]);
+    const [photo, setPhoto] = useState({});
     const params = useParams()
 
     useEffect(() => {

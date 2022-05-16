@@ -38,6 +38,7 @@ const SignUp = () => {
             post("/users/signup", {
                 username: username,
                 password: password,
+                email: email
               })
                 .then((results) => {
                   console.log("Results", results.data.token);

@@ -17,7 +17,7 @@ const Photo = (props) => {
         </Link>
 
       
-            {/* <TheseTags photo={props.photo}/> */}
+            <TheseTags photo={props.photo}/>
 
             <p>{props.photo.photographedDate}</p>
         </div>

@@ -12,7 +12,7 @@ const Login = () => {
   
     const navigate = useNavigate();
   
-    function checkFields(e) {
+    function submit(e) {
       e.preventDefault();
       console.log("logIn", username, password)
       post("/users/login", {
@@ -34,7 +34,7 @@ const Login = () => {
     return (
 
         <div>
-        <form onSubmit={checkFields}>
+        <form onSubmit={submit}>
           <Username setUsername={setUsername} />
   
           <Password setPassword={setPassword} />
