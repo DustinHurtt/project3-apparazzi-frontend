@@ -24,6 +24,7 @@ const Login = () => {
           .then((results) => {
             console.log("Results", results.data.token);
             localStorage.setItem('authToken', results.data.token);
+            localStorage.setItem('id', results.data.id);
             navigate("/")
           })
           .catch((err) => {

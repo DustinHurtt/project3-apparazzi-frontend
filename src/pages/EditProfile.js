@@ -159,7 +159,7 @@ const EditProfile = () => {
         </div>
 
 
-            <button>Delete Profile</button>
+            <button onClick={()=>navigate('/delete-profile')}>Delete Profile</button>
         </div>
 
     )
