@@ -7,7 +7,7 @@ import { baseUrl } from "../authService/baseUrl";
 import Photo from "../components/Photo";
 
 
-const PhotoDetails = ({match}) => {
+const PhotoDetails = ({}) => {
 
     const [photo, setPhoto] = useState({});
     const params = useParams()

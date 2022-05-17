@@ -62,7 +62,8 @@ const SubmitPhoto = () => {
       function update(photo) {
 
 //*********************** */
-            post(`/photos/${photoId.id}/add-after`, photo)
+            post(`/photos/${photoId.id}/add-after`, {description: photo.description, tags: photo.tags.replace(/\s/g,'').split("#")})
+            // post(`/photos/${photoId.id}/add-after`, photo)
             .then (navigate('/profile'))
             .catch(error => {
               console.error('There was an error!', error);

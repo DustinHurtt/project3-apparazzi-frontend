@@ -12,6 +12,7 @@ import AllPhotos from './pages/AllPhotos';
 import PhotoDetails from './pages/PhotoDetail';
 import EditProfile from './pages/EditProfile';
 import SubmitPhoto from './pages/SubmitPhoto';
+import TagDetails from './pages/TagDetails';
 
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
         <Route path="/tags" element={<Tags />}></Route>
         <Route path="/allPhotos" element={<AllPhotos />}></Route>
         <Route path="/:id/details" element={<PhotoDetails />}></Route>
+        <Route path="/:id/tag" element={<TagDetails />}></Route>
         <Route path="/edit-profile" element={<EditProfile />}></Route>
         <Route path="/submit-photo" element={<SubmitPhoto />}></Route>
         <Route path="*" element={<NotFound />}></Route>
