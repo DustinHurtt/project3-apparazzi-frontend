@@ -27,9 +27,10 @@ const PhotoDetails = ({}) => {
   
     const fetchPhoto = () => {
         get(`/photos/${params.id}/details`)
+        
           .then((res) => {
             setPhoto(res.data.result);
-            // console.log(res.data)
+            console.log("DATA!!!", res.data)
   
           })
           .catch((err) => console.log(err));
@@ -69,7 +70,7 @@ const PhotoDetails = ({}) => {
     }
     
     const handleChange = (e) => {
-        setComment({ ...comment, [e.target.comment]: e.target.value });
+        setComment({ ...comment, [e.target.name]: e.target.value });
       };
 
     const handleSubmit = (e) => {
@@ -89,9 +90,13 @@ const PhotoDetails = ({}) => {
       <div>
         <Photo photo={photo} />
 
+
         <p>{photo.description}</p>
         {/* <p>{photo.tags}</p> */}
-        <p>{photo.comments}</p>
+
+        {id === photo.contributor && (
+          <button onClick={deletePhoto}>Delete</button>
+        )}
 
         <div>
           <form>
@@ -109,9 +114,25 @@ const PhotoDetails = ({}) => {
           </form>
         </div>
 
-        {id === photo.contributor && (
-          <button onClick={deletePhoto}>Delete</button>
-        )}
+
+
+        <div>
+
+        <p>Comments</p>
+
+        {photo.comments && photo.comments.map((comment) => {
+        return (<p key={comment._id}><span style={{fontWeight: "bold"}}>{comment.user.username}</span>: {comment.comment} </p>);
+
+      })}
+        
+        
+        {/* {photo.comments} */}
+        
+        
+        
+        </div>
+
+
       </div>
     );
 

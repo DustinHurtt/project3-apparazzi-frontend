@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 let gpsConvert = (gpsStr) => {
     var gpsToLonLatRegex = /[-]{0,1}[\d.]*[\d]|([NSEW])+/g;
     var gpsParsed = gpsStr.match(gpsToLonLatRegex);
-    console.log(gpsStr.match(gpsToLonLatRegex));
+    // console.log(gpsStr.match(gpsToLonLatRegex));
 
     var gpsParsedObj = {
       coordinate: {
@@ -70,7 +70,7 @@ const TagDetails = () => {
           )
           .then((res) => {
             setPhotos(res.data.photos);
-            console.log("resData", res.data.photos)
+            // console.log("resData", res.data.photos)
   
           })
           .catch((err) => console.log(err));
@@ -147,8 +147,8 @@ const TagDetails = () => {
                 gpsConvert(spot.latitude),
                 gpsConvert(spot.longitude),
               ];
-              console.log(                gpsConvert(spot.longitude),
-                gpsConvert(spot.latitude))
+              {/* console.log(                gpsConvert(spot.longitude),
+                gpsConvert(spot.latitude)) */}
 
               return (
                 <Marker position={point} key={spot["_id"]}>

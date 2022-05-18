@@ -1,14 +1,62 @@
-import React from "react";  
+import React from "react"; 
+import { Link } from "react-router-dom";
+
+import {get} from "../authService/authService"
+import Photo from "../components/Photo";
+import User from "../components/User";
+import { useParams } from "react-router-dom";
+
 
 const Contributor = () => {
 
+    const [photos, setPhotos] = React.useState([])
+    const [user, setUser] =React.useState({})
+
+    const params = useParams()
+
+
+
+    React.useEffect(() => {
+        getPhotos()
+          }, []);
+
+    let getPhotos = () => {
+        get(`/photos/${params.id}/contributor`)
+            .then((results) => {
+                setPhotos(results.data.foundPhotos)
+                setUser(results.data.foundUser)
+                // console.log("results", results.data)
+
+                // console.log("foundUser", results.data.foundUser)
+            })
+            
+            .catch((err) => {console.log(err.message)});
+            
+          };  
+
+        //   console.log("photos", photos)
+        //   console.log("user", user)
+
     return (
+      <div>
+        <h2>{user.username}'s Profile</h2>
 
-        <div>
-            <h1>This is Contributor</h1>
-        </div>
 
-    )
+        <User user={user}/>
+
+
+
+
+        {photos.map((photo) => {
+          return (
+            <div key={photo._id}>
+              <Photo photo={photo} />
+            </div>
+          );
+        })}
+
+      </div>
+    );
 
 }
 
