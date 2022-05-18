@@ -11,42 +11,44 @@ import { Component, Fragment } from 'react';
 import {  TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import { Link } from "react-router-dom";
+import {convertGPS} from "../authService/convertGPS"
+import TheseTags from "../components/TheseTags";
 // import Map from './components/Map'
 
-let gpsConvert = (gpsStr) => {
-    var gpsToLonLatRegex = /[-]{0,1}[\d.]*[\d]|([NSEW])+/g;
-    var gpsParsed = gpsStr.match(gpsToLonLatRegex);
-    // console.log(gpsStr.match(gpsToLonLatRegex));
+// let gpsConvert = (gpsStr) => {
+//     var gpsToLonLatRegex = /[-]{0,1}[\d.]*[\d]|([NSEW])+/g;
+//     var gpsParsed = gpsStr.match(gpsToLonLatRegex);
+//     // console.log(gpsStr.match(gpsToLonLatRegex));
 
-    var gpsParsedObj = {
-      coordinate: {
-        degree: gpsParsed[0],
-        minute: gpsParsed[1],
-        second: gpsParsed[2],
-        direction: gpsParsed[3],
-      },
-    };
+//     var gpsParsedObj = {
+//       coordinate: {
+//         degree: gpsParsed[0],
+//         minute: gpsParsed[1],
+//         second: gpsParsed[2],
+//         direction: gpsParsed[3],
+//       },
+//     };
 
-    var gpsToLonLat = function (o) {
-      var n = NaN;
-      if (o) {
-        var t = Number(o.degree),
-          d = "undefined" != typeof o.minute ? Number(o.minute) / 60 : 0,
-          l = "undefined" != typeof o.second ? Number(o.second) / 3600 : 0,
-          r = o.direction || null;
-        null !== r && /[SW]/i.test(r) && (t = -1 * Math.abs(t));
+//     var gpsToLonLat = function (o) {
+//       var n = NaN;
+//       if (o) {
+//         var t = Number(o.degree),
+//           d = "undefined" != typeof o.minute ? Number(o.minute) / 60 : 0,
+//           l = "undefined" != typeof o.second ? Number(o.second) / 3600 : 0,
+//           r = o.direction || null;
+//         null !== r && /[SW]/i.test(r) && (t = -1 * Math.abs(t));
         
-         n = 0 > t ? t - d - l : t + d + l;
-      }
-      return n;
-    };
+//          n = 0 > t ? t - d - l : t + d + l;
+//       }
+//       return n;
+//     };
 
-    let integer = Number([gpsToLonLat(gpsParsedObj.coordinate)])
+//     let integer = Number([gpsToLonLat(gpsParsedObj.coordinate)])
 
-    return integer;
-  };
+//     return integer;
+//   };
 
-const TagDetails = () => {
+const TagDetails = (props) => {
 
     const [photos, setPhotos] = useState([]);
     // const [spot, setSpots] = useState([])
@@ -59,7 +61,8 @@ const TagDetails = () => {
 
     useEffect(() => {
         fetchPhotos();
-    }, []);
+        window.scrollTo(0, 0)
+    }, [props]);
   
     const fetchPhotos = () => {
         axios
@@ -132,7 +135,7 @@ const TagDetails = () => {
 
         {/* <div id="mapid"></div> */}
         <div id="mapid">
-          <MapContainer
+          <MapContainer id={"tagMap"}
             center={[map.lat, map.lng]}
             zoom={map.zoom}
             style={{ width: "100%", height: "80vh" }}
@@ -144,17 +147,19 @@ const TagDetails = () => {
 
             {photos.map((spot) => {
               const point = [
-                gpsConvert(spot.latitude),
-                gpsConvert(spot.longitude),
+                convertGPS(spot.latitude),
+                convertGPS(spot.longitude),
               ];
-              {/* console.log(                gpsConvert(spot.longitude),
-                gpsConvert(spot.latitude)) */}
+              {/* console.log("CONVERTED!!", convertGPS(spot.longitude), gpsConvert(spot.longitude),
+                convertGPS(spot.latitude), gpsConvert(spot.latitude))
+                console.log("SPOT", spot) */}
 
               return (
                 <Marker position={point} key={spot["_id"]}>
                   <Popup>
+                    
                     <span>
-                    spot
+                    <TheseTags photo={spot}/>
                       {/* ADDRESS: {incident["address"]}, {incident["city"]} -{" "}
                       {incident["zip_code"]} */}
                     </span>

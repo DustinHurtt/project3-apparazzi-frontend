@@ -30,8 +30,8 @@ const Photo = (props) => {
             <TheseTags photo={props.photo}/>
 
 
-            <p>Spotted on {parseDate(props.photo.photographedDate)}</p>
-            <p>By <Link to={`/${props.photo.contributor._id}/contributor`}>{props.photo.contributor.username}</Link></p>
+            {props.photo.photographedDate && <p>Spotted on {parseDate(props.photo.photographedDate)}</p>}
+            {props.photo.contributor && <p>By <Link to={`/${props.photo.contributor._id}/contributor`}>{props.photo.contributor.username}</Link></p>}
 
             {/* <p>{props.photo.photographedDate}</p>
             <p>{DateTime.fromJSDate(props.photo.photographedDate).toLocaleString(DateTime.DATETIME_MED)}</p> */}
