@@ -1,4 +1,8 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,12 +39,142 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 img {
-  height: 20vh;
+  /* height: 100%; */
+  display: block;
+  /* position: absolute; */
+  margin: auto;
+  /* top: 50%;
+  left: 50%; */
+  /* min-height: 100%;
+  min-width: 100%; */
+  /* transform: translate(-50%, -50%); */
+  height: 50vh;
+}
+
+.post-image{
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
 }
 
 #mapid {
   height: 1000px
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus{
+    outline: none;
+}
+
+body{
+    width: 100%;
+    background: #fafafa;
+    position: relative;
+    font-family: 'roboto', sans-serif;
+    padding-top: 50px;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    border-bottom: 1px solid #dfdfdf;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+
+}
+
+.nav-wrapper{
+    width: 70%;
+    max-width: 1000px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-img{
+    height: 100%;
+    margin-top: 5px;
+}
+
+.search-box{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 25px;
+    background: #fafafa;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.search-box::placeholder{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-items{
+    height: 22px;
+    position: relative;
+}
+
+.icon{
+    height: 100%;
+    cursor: pointer;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.user-profile{
+    width: 22px;
+    border-radius: 50%;
+    background-image: url('');
+    background-size: cover;
+}
+
+.post{
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border: 1px solid #dfdfdf;
+  margin-top: 40px;
+}
+
+.main{
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.wrapper{
+  width: 70%;
+  max-width: 1000px;
+  display: grid;
+  /* grid-template-columns: 60% 40%; */
+  -ms-grid-columns: 60% 40%;
+  grid-gap: 30px;
+}
+
+.left-col{
+  display: flex;
+  flex-direction: column;
 }

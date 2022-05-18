@@ -32,26 +32,28 @@ function App() {
   }
 
   return (
-    <div>
-      <header>
-        {token ? (
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/allPhotos">All Photos</Link>
-            <Link to="/tags">Tags</Link>
-            <Link to="/submit-photo">Submit Photo</Link>
-            <Link to="/profile">Profile</Link>
-            <button onClick={logout}>Logout</button>
-          </nav>
-        ) : (
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to='/signup'>Sign Up</Link>
-            <Link to="/login">Log In</Link>
+    <div >
+      <div className="navbar">
+        <header className='nav-wrapper'>
+          {token ? (
+            <nav className='nav-items'>
+              <Link to="/" className='icon'>Home</Link>
+              <Link to="/allPhotos" className='icon'>All Photos</Link>
+              <Link to="/tags" className='icon'>Tags</Link>
+              <Link to="/submit-photo" className='icon'>Submit Photo</Link>
+              <Link to="/profile" className='icon'>Profile</Link>
+              <button onClick={logout} className='icon'>Logout</button>
+            </nav>
+          ) : (
+            <nav className='nav-items'>
+              <Link to="/" className='icon'>Home</Link>
+              <Link to="/signup" className='icon'>Sign Up</Link>
+              <Link to="/login" className='icon'>Log In</Link>
+            </nav>
+          )}
+        </header>
 
-          </nav>
-        )}
-      </header>
+      </div>
 
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -63,9 +65,9 @@ function App() {
         <Route path="/:id/details" element={<PhotoDetails />}></Route>
         <Route path="/:id/tag" element={<TagDetails />}></Route>
         <Route path="/edit-profile" element={<EditProfile />}></Route>
-        <Route path="/delete-profile" element={<DeleteProfile/>}></Route>
+        <Route path="/delete-profile" element={<DeleteProfile />}></Route>
         <Route path="/submit-photo" element={<SubmitPhoto />}></Route>
-        <Route path="/:id/contributor" element={<Contributor />}></Route>        
+        <Route path="/:id/contributor" element={<Contributor />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </div>

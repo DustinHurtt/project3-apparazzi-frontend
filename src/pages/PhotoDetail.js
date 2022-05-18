@@ -69,21 +69,7 @@ const PhotoDetails = () => {
 
     function update(newComment) {
 
-        // if (updatedUser.imageUrl) {
-    
-        // post(`/users/edit-profile-with-picture`, updatedUser)
-        // .then (navigate('/profile'))
-        // .catch(error => {
-        //   console.error('There was an error!', error);
-        // })
-        
-        // } else {
-        //     post(`/comments/${params.id}/add-comment`, newComment )
-        //     .then (navigate(`/${params.id}/details`))
-        //     .catch(error => {
-        //       console.error('There was an error!', error);
-        //     })
-        // // }
+
             post(`/comments/${params.id}/add-comment`, newComment )
             .then ((results)=>{
                 fetchPhoto()

@@ -154,8 +154,8 @@ const TagDetails = (props) => {
                 convertGPS(spot.latitude), gpsConvert(spot.latitude))
                 console.log("SPOT", spot) */}
 
-              return (
-                <Marker position={point} key={spot["_id"]}>
+             
+                return point[0] &&  ( <Marker position={point} key={spot["_id"]}>
                   <Popup>
                     
                     <span>

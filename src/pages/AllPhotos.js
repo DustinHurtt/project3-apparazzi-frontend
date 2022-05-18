@@ -4,6 +4,10 @@ import { baseUrl } from "../authService/baseUrl";
 import Photo from "../components/Photo";
 import { Link } from "react-router-dom";
 
+
+
+
+
 const AllPhotos = () => {
 
     const [photos, setPhotos] = React.useState([])
@@ -25,25 +29,39 @@ const AllPhotos = () => {
           };  
 
     return (
+      <div>
+        <h1>This is AllPhotos</h1>
 
-        <div>
-            <h1>This is AllPhotos</h1>
+        <section className="main">
 
+          <div className="wrapper">
 
+            <div className="left-col">
 
-      {photos.map((photo) => {
-        return (
-          <div key={photo._id}>
-          
-                <Photo photo={photo}/>
-            
+              <div className="post">
+
+                {photos.map((photo) => {
+
+                  return (
+
+                    <div className="post-image" key={photo._id}>
+                      <Photo photo={photo}  />
+                    </div>
+
+                  );
+
+                })}
+
+              </div>
+
+            </div>
+
           </div>
-        );
-      })}
 
-        </div>
+        </section>
 
-    )
+      </div>
+    );
 
 }
 
