@@ -45,7 +45,7 @@ const AllPhotos = () => {
                   return (
 
                     <div className="post-image" key={photo._id}>
-                      <Photo photo={photo}  />
+                      <Photo photo={photo} className="scrollImage"  />
                     </div>
 
                   );

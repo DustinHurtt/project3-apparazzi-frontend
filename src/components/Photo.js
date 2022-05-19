@@ -22,7 +22,7 @@ const Photo = (props) => {
 
         <Link to ={`/${props.photo._id}/details`}>
 
-            <img src = {props.photo.imageUrl} alt = "photograph"/>            
+            <img className={props.className} src = {props.photo.imageUrl} alt = "photograph"/>            
         
         </Link>
 

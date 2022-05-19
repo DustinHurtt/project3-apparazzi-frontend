@@ -49,17 +49,28 @@ import TheseTags from "../components/TheseTags";
 //   };
 
 const TagDetails = (props) => {
+    
+    let myIcon = L.icon({
+        iconUrl: require("../AppStar.png"),
+        iconSize: [36, 36],
+        iconAnchor: [18, 36]
+    })
 
     const [photos, setPhotos] = useState([]);
     // const [spot, setSpots] = useState([])
     const [map, setMap] = useState({
         lat: 37.7749,
         lng: -122.4194,
-        zoom: 13
-    })
+        zoom: 13,
+        
+        
+    } )
+    
+
+
     const params = useParams()
 
-    useEffect(() => {
+        useEffect(() => {
         fetchPhotos();
         window.scrollTo(0, 0)
     }, [props]);
@@ -129,6 +140,9 @@ const TagDetails = (props) => {
 
     //   console.log(photos)
 
+
+
+
     return (
       <div>
         <h1>This is TagDetails</h1>
@@ -153,9 +167,10 @@ const TagDetails = (props) => {
               {/* console.log("CONVERTED!!", convertGPS(spot.longitude), gpsConvert(spot.longitude),
                 convertGPS(spot.latitude), gpsConvert(spot.latitude))
                 console.log("SPOT", spot) */}
-
+                {/* , 
+    {icon: myIcon} */}
              
-                return point[0] &&  ( <Marker position={point} key={spot["_id"]}>
+                return point[0] &&  ( <Marker icon={myIcon} position={point} key={spot["_id"]  } >
                   <Popup>
                     
                     <span>
