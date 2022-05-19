@@ -53,14 +53,14 @@ const TagDetails = (props) => {
     let myIcon = L.icon({
         iconUrl: require("../AppStar.png"),
         iconSize: [36, 36],
-        iconAnchor: [18, 36]
+        iconAnchor: [18, 18]
     })
 
     const [photos, setPhotos] = useState([]);
     // const [spot, setSpots] = useState([])
     const [map, setMap] = useState({
-        lat: 37.7749,
-        lng: -122.4194,
+        lat: 25.80051750601982,
+        lng: -80.19831072619859,
         zoom: 13,
         
         
@@ -179,11 +179,11 @@ const TagDetails = (props) => {
                     <br />
                     <span>
                     <Link to ={`/${spot._id}/details`}>Details</Link>
-                    spot
+                    
                     {/* BATTALION: {incident["battalion"]} */}
                     </span>
                     <br />
-                    <img src={spot.imageUrl} alt="testimage"/>
+                    <img src={spot.imageUrl} alt="testimage" className="previewImage"/>
                   </Popup>
                 </Marker>
               );

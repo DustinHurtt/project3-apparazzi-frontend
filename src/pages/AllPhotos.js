@@ -31,7 +31,7 @@ const AllPhotos = () => {
 
     return (
       <div>
-        <h2>All Photos</h2>
+        {/* <h2>All Photos</h2> */}
 
         <section className="main">
 

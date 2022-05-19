@@ -123,7 +123,7 @@ const SubmitPhoto = () => {
             ></input>
 
             <button onClick={handleSubmit} type="button">
-              Update Profile
+              Submit Photo
             </button>
           </form>
         </div>

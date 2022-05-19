@@ -22,7 +22,7 @@ const PhotoDetails = () => {
     let myIcon = L.icon({
         iconUrl: require("../AppStar.png"),
         iconSize: [36, 36],
-        iconAnchor: [18, 36]
+        iconAnchor: [18, 18]
     })
 
     const [photo, setPhoto] = useState({});
@@ -116,8 +116,8 @@ const PhotoDetails = () => {
 
 console.log("Contributor", photo.contributor)
     return (
-      <div>
-        <Photo photo={photo} />
+      <div className="detailContainer">
+        <Photo photo={photo} className={"detailPhoto"} />
 
 
         <p>{photo.description}</p>
@@ -163,7 +163,8 @@ console.log("Contributor", photo.contributor)
             center={[convertGPS(photo.latitude),
         convertGPS(photo.longitude)]}
             zoom={map.zoom}
-            style={{ width: "100%", height: "80vh" }}
+            style={{ width: "90%", height: "80vh" }}
+            className="mapContainer"
           >
             <TileLayer
               attribution='&copy <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -194,11 +195,11 @@ console.log("Contributor", photo.contributor)
                     <br />
                     <span>
                     <Link to ={`/${photo._id}/details`}>Details</Link>
-                    photo
+                    
                     {/* BATTALION: {incident["battalion"]} */}
                     </span>
                     <br />
-                    <img src={photo.imageUrl} alt="testimage"/>
+                    <img src={photo.imageUrl} alt="previewImage" className="previewImage"/>
                   </Popup>
                 </Marker>
               {/* );
