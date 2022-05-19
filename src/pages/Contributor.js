@@ -47,13 +47,15 @@ const Contributor = () => {
 
 
 
-        {photos.map((photo) => {
-          return (
-            <div key={photo._id}>
-              <Photo photo={photo} />
-            </div>
-          );
-        })}
+        <div className="columnated">
+          {[...photos].reverse().map((photo) => {
+            return (
+              <div className="direction" key={photo._id}>
+                <Photo photo={photo} className={"imageGroup"} />
+              </div>
+            );
+          })}
+        </div>
 
       </div>
     );

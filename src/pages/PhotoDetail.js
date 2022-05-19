@@ -11,11 +11,19 @@ import { Component, Fragment } from 'react';
 import {  TileLayer, Marker, Popup } from 'react-leaflet'
 import TheseTags from "../components/TheseTags";
 import { Link } from "react-router-dom";
+import L from "leaflet"
+
 
 import Photo from "../components/Photo";
 
 
 const PhotoDetails = () => {
+
+    let myIcon = L.icon({
+        iconUrl: require("../AppStar.png"),
+        iconSize: [36, 36],
+        iconAnchor: [18, 36]
+    })
 
     const [photo, setPhoto] = useState({});
     const [comment, setComment] = useState({
@@ -37,6 +45,7 @@ const PhotoDetails = () => {
     const navigate = useNavigate()
 
     let id = localStorage.getItem('id')
+    console.log("ID???", id)
 
     useEffect(() => {
         fetchPhoto();
@@ -105,7 +114,7 @@ const PhotoDetails = () => {
 
     
 
-
+console.log("Contributor", photo.contributor)
     return (
       <div>
         <Photo photo={photo} />
@@ -114,7 +123,7 @@ const PhotoDetails = () => {
         <p>{photo.description}</p>
         {/* <p>{photo.tags}</p> */}
 
-        {id === photo.contributor && (
+       {photo.contributor && id === photo.contributor._id && (
           <button onClick={deletePhoto}>Delete</button>
         )}
 
@@ -171,7 +180,7 @@ const PhotoDetails = () => {
                 console.log("SPOT", spot) */}
 
 
-                <Marker position={[
+                <Marker icon={myIcon} position={[
         convertGPS(photo.latitude),
         convertGPS(photo.longitude),
       ]} key={photo["_id"]}>

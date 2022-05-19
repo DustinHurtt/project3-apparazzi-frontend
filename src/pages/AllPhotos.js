@@ -3,6 +3,7 @@ import React from "react";
 import { baseUrl } from "../authService/baseUrl";
 import Photo from "../components/Photo";
 import { Link } from "react-router-dom";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -30,9 +31,11 @@ const AllPhotos = () => {
 
     return (
       <div>
-        <h1>This is AllPhotos</h1>
+        <h2>All Photos</h2>
 
         <section className="main">
+
+        <div className="grid">
 
           <div className="wrapper">
 
@@ -55,6 +58,8 @@ const AllPhotos = () => {
               </div>
 
             </div>
+
+          </div>
 
           </div>
 

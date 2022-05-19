@@ -20,6 +20,18 @@ const ScratchPad = () => {
 
                                 </div>
 
+                                <div class="post-content">
+                                    {/* <div class="reaction-wrapper">
+                        <img src="img/like.PNG" class="icon" alt="">
+                        <img src="img/comment.PNG" class="icon" alt="">
+                        <img src="img/send.PNG" class="icon" alt="">
+                        <img src="img/save.PNG" class="save icon" alt="">
+                                    </div> */}
+                                        <p class="likes">1,012 likes</p>
+                                        <p class="description"><span>username </span> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur tenetur veritatis placeat, molestiae impedit aut provident eum quo natus molestias?</p>
+                                        <p class="post-time">2 minutes ago</p>
+                                </div>
+
 
 
                         </div>

@@ -145,14 +145,16 @@ const TagDetails = (props) => {
 
     return (
       <div>
-        <h1>This is TagDetails</h1>
+        <p>This is TagDetails</p>
+
+        <h2>#{params.id}</h2>
 
         {/* <div id="mapid"></div> */}
         <div id="mapid">
-          <MapContainer id={"tagMap"}
+          <MapContainer className="mapContainer" id={"tagMap"}
             center={[map.lat, map.lng]}
             zoom={map.zoom}
-            style={{ width: "100%", height: "80vh" }}
+            style={{ width: "90%", height: "80vh" }}
           >
             <TileLayer
               attribution='&copy <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -164,11 +166,7 @@ const TagDetails = (props) => {
                 convertGPS(spot.latitude),
                 convertGPS(spot.longitude),
               ];
-              {/* console.log("CONVERTED!!", convertGPS(spot.longitude), gpsConvert(spot.longitude),
-                convertGPS(spot.latitude), gpsConvert(spot.latitude))
-                console.log("SPOT", spot) */}
-                {/* , 
-    {icon: myIcon} */}
+
              
                 return point[0] &&  ( <Marker icon={myIcon} position={point} key={spot["_id"]  } >
                   <Popup>
@@ -196,14 +194,21 @@ const TagDetails = (props) => {
         </div>
 
         <div>
-          {photos.map((photo) => {
+
+
+        <div className="columnated">
+          {[...photos].reverse().map((photo) => {
             return (
-              <div key={photo._id}>
-                <Photo photo={photo} />
+              <div className="direction" key={photo._id}>
+                <Photo photo={photo} className={"imageGroup"} />
               </div>
             );
           })}
         </div>
+
+
+        </div>
+
       </div>
     );
 

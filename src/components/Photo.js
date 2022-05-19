@@ -17,27 +17,35 @@ const Photo = (props) => {
     //   console.log(parseDate(props.photo.photographedDate));
 
     return (
-
-        <div>
-
-        <Link to ={`/${props.photo._id}/details`}>
-
-            <img className={props.className} src = {props.photo.imageUrl} alt = "photograph"/>            
-        
+      <div>
+        <Link to={`/${props.photo._id}/details`}>
+          <img
+            className={props.className}
+            src={props.photo.imageUrl}
+            alt="photograph"
+          />
         </Link>
 
-      
-            <TheseTags photo={props.photo}/>
+        <div class="post-content">
+          <TheseTags photo={props.photo} />
 
-
-            {props.photo.photographedDate && <p>Spotted on {parseDate(props.photo.photographedDate)}</p>}
-            {props.photo.contributor && <p>By <Link to={`/${props.photo.contributor._id}/contributor`}>{props.photo.contributor.username}</Link></p>}
-
-            {/* <p>{props.photo.photographedDate}</p>
-            <p>{DateTime.fromJSDate(props.photo.photographedDate).toLocaleString(DateTime.DATETIME_MED)}</p> */}
+          {props.photo.photographedDate && (
+            <p class="description">Spotted on {parseDate(props.photo.photographedDate)}</p>
+          )}
+          {props.photo.contributor && (
+            <p class="post-time">
+              By{" "}
+              <Link to={`/${props.photo.contributor._id}/contributor`}>
+                {props.photo.contributor.username}
+              </Link>
+            </p>
+          )}
         </div>
 
-    )
+        {/* <p>{props.photo.photographedDate}</p>
+            <p>{DateTime.fromJSDate(props.photo.photographedDate).toLocaleString(DateTime.DATETIME_MED)}</p> */}
+      </div>
+    );
 
 }
 

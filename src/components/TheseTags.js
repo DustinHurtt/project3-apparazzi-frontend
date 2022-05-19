@@ -10,7 +10,7 @@ const TheseTags = (props) => {
         <div>
       <p>    
             {props.photo.tags && props.photo.tags.map((tag) => {
-        return (<span key={tag}>#<Link to={`/${tag.trim()}/tag`}>{tag}</Link> </span>);
+        return (<span class="likes" key={tag}>#<Link to={`/${tag.trim()}/tag`}>{tag}</Link> </span>);
       })}
 
       </p>  

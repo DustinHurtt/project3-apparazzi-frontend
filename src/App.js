@@ -15,6 +15,7 @@ import SubmitPhoto from './pages/SubmitPhoto';
 import TagDetails from './pages/TagDetails';
 import DeleteProfile from './pages/DeleteProfile';
 import Contributor from './pages/Contributor';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
     <div >
       <div className="navbar">
         <header className='nav-wrapper'>
+        <h1>Apparazzi!</h1>
           {token ? (
             <nav className='nav-items'>
               <Link to="/" className='icon'>Home</Link>
