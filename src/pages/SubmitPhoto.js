@@ -107,7 +107,7 @@ const SubmitPhoto = () => {
               type="file"
               name="imageUrl"
             ></input>
-            <label>Descrption</label>
+            <label>Description</label>
             <input
               onChange={(e) => handleChange(e)}
               type="text"
