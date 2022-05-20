@@ -19,10 +19,13 @@ const Tags = () => {
 
 
     return (
-      <div>
-        <h2>Tag Search</h2>
+      <div className="homeLanding">
 
-        <div>
+
+
+        <div className="homeContainer">
+        <h2>Tag Search</h2>
+        <br/>
           <form>
             <label>Search  #</label>
             <input

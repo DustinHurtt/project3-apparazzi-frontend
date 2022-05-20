@@ -55,8 +55,11 @@ const SignUp = () => {
 
 
     return (
-      <div>
-        <form onSubmit={checkError}>
+      <div className="homeLanding">
+
+      <div className="homeContainer">
+
+      <form onSubmit={checkError}>
           <Username setUsername={setUsername} />
           <Email setEmail={setEmail} />
           <Password setPassword={setPassword} />
@@ -66,6 +69,11 @@ const SignUp = () => {
 
           <p>{errormessage}</p>
         </form>
+
+
+
+      </div>
+
       </div>
     );
 

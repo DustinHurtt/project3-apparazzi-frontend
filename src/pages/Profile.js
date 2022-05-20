@@ -36,7 +36,7 @@ const Profile = () => {
         //   console.log("user", user)
 
     return (
-      <div>
+      <div className="theProfile">
         <h2>Your Profile</h2>
 
 

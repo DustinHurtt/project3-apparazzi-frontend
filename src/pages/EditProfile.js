@@ -111,58 +111,60 @@ const EditProfile = () => {
 
 
     return (
+      <div className="homeLanding">
+        <div className="homeContainer">
+          <h1>Edit Profile</h1>
+          <br />
 
-        <div>
-            <h1>This is EditProfile</h1>
+          <div>
+            <form>
+              <label>Name</label>
+              <input
+                onChange={handleChange}
+                type="text"
+                name="name"
+                value={updatedUser.name}
+              ></input>
+              <label>Location</label>
+              <input
+                onChange={handleChange}
+                type="text"
+                name="location"
+                value={updatedUser.location}
+              ></input>
+              <label>Profile Picture</label>
+              <input
+                onChange={(e) => handleFileUpload(e)}
+                type="file"
+                name="imageUrl"
+              ></input>
+              <label>Bio</label>
+              <input
+                onChange={handleChange}
+                type="text"
+                name="bio"
+                value={updatedUser.bio}
+              ></input>
+              <label>Email</label>
+              <input
+                onChange={handleChange}
+                type="text"
+                name="email"
+                value={updatedUser.email}
+              ></input>
 
-        <div>
-          <form>
-            <label>Name</label>
-            <input
-              onChange={handleChange}
-              type="text"
-              name="name"
-              value={updatedUser.name}
-            ></input>
-            <label>Location</label>
-            <input
-              onChange={handleChange}
-              type="text"
-              name="location"
-              value={updatedUser.location}
-            ></input>
-            <label>Profile Picture</label>
-            <input
-              onChange={(e) => handleFileUpload(e)}
-              type="file"
-              name="imageUrl"
-            ></input>
-            <label>Bio</label>
-            <input
-              onChange={handleChange}
-              type="text"
-              name="bio"
-              value={updatedUser.bio}
-            ></input>
-            <label>Email</label>
-            <input
-              onChange={handleChange}
-              type="text"
-              name="email"
-              value={updatedUser.email}
-            ></input>
+              <button onClick={handleSubmit} type="button">
+                Update Profile
+              </button>
+            </form>
+          </div>
 
-            <button onClick={handleSubmit} type="button">
-              Update Profile
-            </button>
-          </form>
+          <button onClick={() => navigate("/delete-profile")}>
+            Delete Profile
+          </button>
         </div>
-
-
-            <button onClick={()=>navigate('/delete-profile')}>Delete Profile</button>
-        </div>
-
-    )
+      </div>
+    );
 
 }
 

@@ -117,61 +117,86 @@ const PhotoDetails = () => {
 console.log("Contributor", photo.contributor)
     return (
       <div className="detailContainer">
-        <Photo photo={photo} className={"detailPhoto"} />
-
-
-        <p>{photo.description}</p>
-        {/* <p>{photo.tags}</p> */}
-
-       {photo.contributor && id === photo.contributor._id && (
-          <button onClick={deletePhoto}>Delete</button>
-        )}
-
-        <div>
-          <form>
-            <label>New Comment</label>
-            <input
-              onChange={handleChange}
-              type="text"
-              name="comment"
-              value={comment.comment}
-            ></input>
-
-            <button onClick={handleSubmit} type="button">
-              Add Comment
-            </button>
-          </form>
+        <div className="photoDetailContainer">
+          <Photo
+            photo={photo}
+            className={"detailPhoto"}
+            altClassName={"altClassName"}
+          />
         </div>
 
+        <div className="detailContent">
+          {/* <p>{photo.tags}</p> */}
 
+          <div className="deleteButton">
+            {photo.contributor && id === photo.contributor._id && (
+              <button onClick={deletePhoto}>Delete Photo</button>
+            )}
+          </div>
+
+          <br />
+
+          <div className="commentsBlock">
+            <p>{photo.description}</p>
+
+            <br />
+
+            <div>
+              <form>
+                {/* <label>New Comment</label> */}
+                <input
+                  onChange={handleChange}
+                  type="text"
+                  name="comment"
+                  value={comment.comment}
+                ></input>
+
+                <button onClick={handleSubmit} type="button">
+                  Add Comment
+                </button>
+              </form>
+            </div>
+
+            <br />
+
+            <h4>Comments: </h4>
+            {/* <br/> */}
+
+            {photo.comments &&
+              photo.comments.map((comment) => {
+                return (
+                  <p key={comment._id}>
+                    <span style={{ fontWeight: "bold" }}>
+                      {comment.user.username}
+                    </span>
+                    : {comment.comment}{" "}
+                  </p>
+                );
+              })}
+          </div>
+        </div>
 
         <div>
+          {/* {photo.comments} */}
 
-        <p>Comments</p>
+          {photo.latitude && (
+            <div id="mapid">
+              <MapContainer
+                id={"tagMap"}
+                center={[
+                  convertGPS(photo.latitude),
+                  convertGPS(photo.longitude),
+                ]}
+                zoom={map.zoom}
+                style={{ width: "90%", height: "80vh" }}
+                className="mapContainer"
+              >
+                <TileLayer
+                  attribution='&copy <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
 
-        {photo.comments && photo.comments.map((comment) => {
-        return (<p key={comment._id}><span style={{fontWeight: "bold"}}>{comment.user.username}</span>: {comment.comment} </p>);
-
-      })}
-        
-        
-        {/* {photo.comments} */}
-
-
-       {photo.latitude && <div id="mapid">
-          <MapContainer id={"tagMap"}
-            center={[convertGPS(photo.latitude),
-        convertGPS(photo.longitude)]}
-            zoom={map.zoom}
-            style={{ width: "90%", height: "80vh" }}
-            className="mapContainer"
-          >
-            <TileLayer
-              attribution='&copy <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-
-            {/* {photo.map((spot) => {
+                {/* {photo.map((spot) => {
               const point = [
                 convertGPS(spot.latitude),
                 convertGPS(spot.longitude),
@@ -180,40 +205,42 @@ console.log("Contributor", photo.contributor)
                 convertGPS(spot.latitude), gpsConvert(spot.latitude))
                 console.log("SPOT", spot) */}
 
-
-                <Marker icon={myIcon} position={[
-        convertGPS(photo.latitude),
-        convertGPS(photo.longitude),
-      ]} key={photo["_id"]}>
+                <Marker
+                  icon={myIcon}
+                  position={[
+                    convertGPS(photo.latitude),
+                    convertGPS(photo.longitude),
+                  ]}
+                  key={photo["_id"]}
+                >
                   <Popup>
-                    
                     <span>
-                    <TheseTags photo={photo}/>
+                      <TheseTags photo={photo} />
                       {/* ADDRESS: {incident["address"]}, {incident["city"]} -{" "}
                       {incident["zip_code"]} */}
                     </span>
                     <br />
                     <span>
-                    <Link to ={`/${photo._id}/details`}>Details</Link>
-                    
-                    {/* BATTALION: {incident["battalion"]} */}
+                      <Link to={`/${photo._id}/details`}>Details</Link>
+
+                      {/* BATTALION: {incident["battalion"]} */}
                     </span>
                     <br />
-                    <img src={photo.imageUrl} alt="previewImage" className="previewImage"/>
+                    <img
+                      src={photo.imageUrl}
+                      alt="previewImage"
+                      className="previewImage"
+                    />
                   </Popup>
                 </Marker>
-              {/* );
+                {/* );
             })} */}
-          </MapContainer>
-          {/* :
+              </MapContainer>
+              {/* :
                'Data is loading...' */}
-        </div>}
-        
-        
-        
+            </div>
+          )}
         </div>
-
-
       </div>
     );
 

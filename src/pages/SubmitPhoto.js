@@ -94,11 +94,11 @@ const SubmitPhoto = () => {
 
     return (
 
-        <div>
-            <h1>This is SubmitPhoto</h1>
+        <div className="homeLanding">
+            {/* <h1>This is SubmitPhoto</h1> */}
 
 
-            <div>
+            <div className="homeContainer">
           <form>
 
             <label>New Photo</label>

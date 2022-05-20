@@ -273,7 +273,8 @@ body{
 
 .profilePhoto {
 
-  height: 40vh
+  height: 40vh;
+  border-radius: 50%;
 }
 
 .homeLanding {
@@ -325,9 +326,49 @@ body{
 }
 
 .detailPhoto {
-  height: 80vh
+  height: 80vh;
+  display: block;
+  margin: auto;
 }
 
 .detailContainer {
   padding-top: 1%;
+   /* display: flex; 
+   justify-content: center;  */
 }
+
+.detailContent{
+
+    
+  display: flex; 
+ justify-content: center;
+
+
+}
+.userLanding {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.altClassName {
+  width: 100vw;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.altClassName2 {
+  width: 1px;
+}
+
+.photoDetailContainer {
+  width: 55vw;
+  display: block;
+  margin: auto;
+}
+
+/* .deleteButton {
+  height: 100vh;
+
+
+} */

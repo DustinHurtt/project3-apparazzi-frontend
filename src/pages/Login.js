@@ -34,7 +34,9 @@ const Login = () => {
 
     return (
 
-        <div>
+        <div className="homeLanding">
+
+        <div className="homeContainer">
         <form onSubmit={submit}>
           <Username setUsername={setUsername} />
   
@@ -45,6 +47,11 @@ const Login = () => {
 
           {/* <p>{errormessage}</p> */}
         </form>
+
+
+
+        </div>
+
         </div>
 
     )
