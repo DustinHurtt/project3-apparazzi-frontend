@@ -1,10 +1,9 @@
 export const convertGPS = (gpsStr) => {
 if (gpsStr){
-  console.log('STR', gpsStr)
+
 
     var gpsToLonLatRegex = /[-]{0,1}[\d.]*[\d]|([NSEW])+/g;
     var gpsParsed = gpsStr.match(gpsToLonLatRegex);
-    console.log(gpsStr.match(gpsToLonLatRegex));
 
     var gpsParsedObj = {
       coordinate: {

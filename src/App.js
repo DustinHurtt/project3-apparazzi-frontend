@@ -40,7 +40,9 @@ function App() {
         <header className='nav-wrapper'>
           <div className='navIconContainer'>
 
-            <img className='navIcon' src={AppIcon}/>
+            <Link to="/" className='navIconImage'><img className='navIcon' src={AppIcon} alt='appIcon'/></Link>
+
+            
 
           <h1 className='navHeadline'>Apparazzi!</h1>
           </div>

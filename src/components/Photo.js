@@ -5,16 +5,13 @@ import { DateTime } from "luxon"
 
 const Photo = (props) => {
 
-    // console.log(props.photo)
-    // console.log("CONTRIBUTOR!!!", props)
-
     function parseDate(s) {
         var b = s.split(/\D/);
-        // return new Date(b[0],b[1]-1,b[2],b[3],b[4],b[5]).toLocaleString();
-        return new Date(b[0],b[1]-1,b[2],b[3],b[4],b[5]).toLocaleString('en-US', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'});
+
+        return new Date(b[0],b[1]-1,b[2],b[3],b[4],b[5]).toLocaleString('en-US', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'});
       }
       
-    //   console.log(parseDate(props.photo.photographedDate));
+
 
     return (
       <div >
@@ -47,8 +44,6 @@ const Photo = (props) => {
         </div>
         <br/>
 
-        {/* <p>{props.photo.photographedDate}</p>
-            <p>{DateTime.fromJSDate(props.photo.photographedDate).toLocaleString(DateTime.DATETIME_MED)}</p> */}
       </div>
     );
 
