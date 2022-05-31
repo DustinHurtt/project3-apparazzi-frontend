@@ -228,7 +228,10 @@ body{
 
 .profilePhoto {
 
-  height: 40vh;
+  height: 300px;
+  width: 300px;
+  background-size: cover;
+  background-position: center;
   border-radius: 50%;
 }
 
