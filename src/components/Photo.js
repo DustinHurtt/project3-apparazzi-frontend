@@ -10,6 +10,12 @@ const Photo = (props) => {
 
         return new Date(b[0],b[1]-1,b[2],b[3],b[4],b[5]).toLocaleString('en-US', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'});
       }
+
+    function readableDate(date) {
+      return DateTime.fromISO(date).toLocaleString(DateTime.DATETIME_SHORT)
+    }
+
+  
       
 
 
@@ -33,12 +39,17 @@ const Photo = (props) => {
               </p>
             )}
             {props.photo.contributor && (
+
+              <div>
               <p className="post-time">
                 By{" "}
                 <Link to={`/${props.photo.contributor._id}/contributor`}>
                   {props.photo.contributor.username}
                 </Link>
               </p>
+              <p className="post-time">submitted on {readableDate(props.photo.createdAt)}</p>              
+              </div>
+              
             )}
           </div>
         </div>
