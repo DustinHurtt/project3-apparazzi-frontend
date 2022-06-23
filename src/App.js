@@ -17,7 +17,7 @@ import DeleteProfile from './pages/DeleteProfile';
 import Contributor from './pages/Contributor';
 
 import AppIcon from "./ApparaazziIcon.png"
-// import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 function App() {
