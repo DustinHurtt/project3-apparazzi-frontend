@@ -1,69 +1,61 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-import {Routes, Route, Link, useNavigate} from 'react-router-dom';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import SignUp from './pages/SignUp';
-import NotFound from './pages/NotFound';
-import Profile from './pages/Profile';
-import Tags from './pages/Tags';
-import AllPhotos from './pages/AllPhotos';
-import PhotoDetails from './pages/PhotoDetail';
-import EditProfile from './pages/EditProfile';
-import SubmitPhoto from './pages/SubmitPhoto';
-import TagDetails from './pages/TagDetails';
-import DeleteProfile from './pages/DeleteProfile';
-import Contributor from './pages/Contributor';
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import NotFound from "./pages/NotFound";
+import Profile from "./pages/Profile";
+import Tags from "./pages/Tags";
+import AllPhotos from "./pages/AllPhotos";
+import PhotoDetails from "./pages/PhotoDetail";
+import EditProfile from "./pages/EditProfile";
+import SubmitPhoto from "./pages/SubmitPhoto";
+import TagDetails from "./pages/TagDetails";
+import DeleteProfile from "./pages/DeleteProfile";
+import Contributor from "./pages/Contributor";
 
-import AppIcon from "./ApparaazziIcon.png"
-
-
+import AppIcon from "./ApparaazziIcon.png";
 
 function App() {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
+  let token = localStorage.getItem("authToken");
 
-
-
-  let token = localStorage.getItem("authToken")
-  // console.log("TOKEN", token)
-
-  function logout (){
-    localStorage.clear()
-    navigate('/')
+  function logout() {
+    localStorage.clear();
+    navigate("/");
   }
 
   return (
-    <div >
+    <div>
       <div className="navbar">
-        <header className='nav-wrapper'>
-          <div className='navIconContainer'>
+        <header className="nav-wrapper">
+          <div className="navIconContainer">
+            <Link to="/" className="navIconImage">
+              <img className="navIcon" src={AppIcon} alt="appIcon" />
+            </Link>
 
-            <Link to="/" className='navIconImage'><img className='navIcon' src={AppIcon} alt='appIcon'/></Link>
-
-            
-
-          <h1 className='navHeadline'>Apparazzi!</h1>
+            <h1 className="navHeadline">Apparazzi!</h1>
           </div>
           {token ? (
-            <nav className='nav-items'>
-              <Link to="/" className='icon'>Home</Link>
-              <Link to="/allPhotos" className='icon'>All Photos</Link>
-              <Link to="/tags" className='icon'>Tags</Link>
-              <Link to="/submit-photo" className='icon'>Submit Photo</Link>
-              <Link to="/profile" className='icon'>Profile</Link>
-              <button onClick={logout} className='icon'>Logout</button>
+            <nav className="nav-items">
+              <Link to="/" className="icon">Home</Link>
+              <Link to="/allPhotos" className="icon">All Photos</Link>
+              <Link to="/tags" className="icon">Tags</Link>
+              <Link to="/submit-photo" className="icon">Submit Photo</Link>
+              <Link to="/profile" className="icon">Profile</Link>
+              <button onClick={logout} className="icon">Logout</button>
             </nav>
           ) : (
-            <nav className='nav-items'>
-              <Link to="/" className='icon'>Home</Link>
-              <Link to="/signup" className='icon'>Sign Up</Link>
-              <Link to="/login" className='icon'>Log In</Link>
+            <nav className="nav-items">
+              <Link to="/" className="icon">Home</Link>
+              <Link to="/signup" className="icon">Sign Up</Link>
+              <Link to="/login" className="icon">Log In</Link>
             </nav>
           )}
         </header>
-
       </div>
 
       <Routes>

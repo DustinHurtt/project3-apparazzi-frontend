@@ -1,10 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
-
-
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 
 img {
-
   display: block;
   margin: auto;
 }
@@ -12,36 +8,27 @@ img {
 .imageGroup {
   width: 90%;
   margin: auto;
-
-
 }
 
 .scrollImage {
-
   display: block;
-
   margin: auto;
-
   max-width: 90%;
-  
-
 }
 
-.post-image{
+.post-image {
   width: 95%;
   height: auto;
-
   border: black;
   border-style: solid;
   border-width: thin;
-  margin: 2% auto
+  margin: 2% auto;
 }
 
 #mapid {
   height: 100vh;
   display: block;
   margin: auto;
-
 }
 
 .mapContainer {
@@ -50,163 +37,124 @@ img {
   z-index: 0;
 }
 
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-*:focus{
-    outline: none;
+*:focus {
+  outline: none;
 }
 
-body{
-    width: 100%;
-    background: #fafafa;
-    position: relative;
-    font-family: 'roboto', sans-serif;
-    padding-top: 50px;
+body {
+  width: 100%;
+  background: #fafafa;
+  position: relative;
+  font-family: "roboto", sans-serif;
+  padding-top: 50px;
 }
 
-.navbar{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background: #fff;
-    border-bottom: 1px solid #dfdfdf;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 5px 0;
-    z-index: 999;
-
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  border-bottom: 1px solid #dfdfdf;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 5px 0;
+  z-index: 999;
 }
 
-.nav-wrapper{
-    width: 75vw;
-    /* width: 70%;
-    max-width: 1000px; */
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+.nav-wrapper {
+  width: 75vw;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.brand-img{
-    height: 100%;
-    margin-top: 5px;
+.brand-img {
+  height: 100%;
+  margin-top: 5px;
 }
 
-/* .search-box{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200px;
-    height: 25px;
-    background: #fafafa;
-    border: 1px solid #dfdfdf;
-    border-radius: 2px;
-    color: rgba(0, 0, 0, 0.5);
-    text-align: center;
-    text-transform: capitalize;
+.nav-items {
+  height: 22px;
+  position: relative;
 }
 
-.search-box::placeholder{
-    color: rgba(0, 0, 0, 0.5);
-} */
-
-.nav-items{
-    height: 22px;
-    position: relative;
+.icon {
+  height: 100%;
+  cursor: pointer;
+  margin: 0 10px;
+  display: inline-block;
 }
 
-.icon{
-    height: 100%;
-    cursor: pointer;
-    margin: 0 10px;
-    display: inline-block;
+.user-profile {
+  width: 22px;
+  border-radius: 50%;
+  background-size: cover;
 }
 
-.user-profile{
-    width: 22px;
-    border-radius: 50%;
-    /* background-image: url(''); */
-    background-size: cover;
-}
-
-.post{
+.post {
   width: 100%;
   height: auto;
   background: #fff;
   border: 1px solid #dfdfdf;
-  /* margin-top: 40px; */
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
-  
-
 }
 
-.main{
+.main {
   width: 100%;
-  /* padding: 40px 0; */
   display: flex;
   justify-content: center;
-  /* margin-top: 50px; */
 }
 
-.wrapper{
-  /* width: 90%; */
+.wrapper {
   max-width: 1000px;
   display: grid;
   display: -ms-grid;
   grid-template-columns: 100% 40%;
   -ms-grid-columns: 60% 40%;
   grid-gap: 30px;
-  justify-content: ;
-
+  /* justify-content: ; */
 }
 
-.left-col{
+.left-col {
   display: flex;
   flex-direction: column;
   margin: auto;
   width: 80%;
   justify-items: center;
-
 }
 
-/* .grid {
-
-  display: grid;
-
-} */
-
-.post-content{
+.post-content {
   width: 100%;
   padding: 20px;
 }
 
-.likes{
+.likes {
   font-weight: bold;
 }
 
-.description{
+.description {
   margin: 10px 0;
   font-size: 14px;
   line-height: 20px;
 }
 
-.post-time{
+.post-time {
   color: rgba(0, 0, 0, 0.5);
   font-size: 12px;
 }
-
 
 .columnated {
   display: grid;
@@ -215,16 +163,11 @@ body{
   gap: 10px;
   grid-auto-rows: minmax(100px, auto);
   -ms-grid-rows: minmax(100px, auto);
-
-  
 }
 
 .direction {
-
   width: 30vw;
-
 }
-
 
 .profilePhoto {
   height: 300px;
@@ -235,7 +178,6 @@ body{
 }
 
 .homeLanding {
-
   height: 90vh;
   width: 100vw;
   display: flex;
@@ -245,39 +187,33 @@ body{
 
 .homeContainer {
   display: block;
-  margin: auto auto auto auto
+  margin: auto auto auto auto;
 }
 
 .homeIcon {
   height: 60vh;
-  margin: auto
+  margin: auto;
 }
 
 .homeText {
   margin: auto;
   text-align: center;
-
 }
 
 .navIcon {
-
   height: 90%;
   margin-top: 5%;
-  
-
 }
 
 .navIconImage {
   height: 100%;
-  margin: 0 33% ;
-
+  margin: 0 33%;
 }
 
 .navIconContainer {
   height: 50px;
   display: flex;
   flex-direction: row;
-  /* justify-content: space-around; */
   align-items: center;
 }
 
@@ -286,8 +222,7 @@ body{
 }
 
 .previewImage {
-  /* width: 20vw */
-  height: 20vh
+  height: 20vh;
 }
 
 .detailPhoto {
@@ -298,18 +233,13 @@ body{
 
 .detailContainer {
   padding-top: 1%;
-   /* display: flex; 
-   justify-content: center;  */
 }
 
-.detailContent{
-
-    
-  display: flex; 
- justify-content: center;
-
-
+.detailContent {
+  display: flex;
+  justify-content: center;
 }
+
 .userLanding {
   width: 100vw;
   display: flex;
@@ -318,8 +248,6 @@ body{
 
 .altClassName {
   width: 100vw;
-  /* display: flex;
-  flex-direction: column; */
 }
 
 .altClassName2 {
@@ -331,9 +259,3 @@ body{
   display: block;
   margin: auto;
 }
-
-/* .deleteButton {
-  height: 100vh;
-
-
-} */
