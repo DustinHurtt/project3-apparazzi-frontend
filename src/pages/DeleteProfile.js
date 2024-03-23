@@ -32,7 +32,7 @@ const DeleteProfile = () => {
 
   return (
     <div>
-      <h1>This is DeleteProfile</h1>
+      <h1>This is Delete Profile</h1>
       <form onSubmit={checkError}>
         <Password setPassword={setPassword} />
         <ConfirmPassword setConfirmPassword={setConfirmPassword} />

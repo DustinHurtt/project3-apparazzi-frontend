@@ -5,6 +5,7 @@ const errorHandler = (err) => {
 };
 
 export const uploadProfilePhoto = (file) => {
+  
   return post("/users/edit-profile-with-picture", file)
     .then((res) => res.data)
 

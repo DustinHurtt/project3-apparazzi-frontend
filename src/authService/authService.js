@@ -3,7 +3,7 @@ import { baseUrl } from "./baseUrl";
 
 export const get = (route) => {
   let token = localStorage.getItem("authToken");
-  console.log("ENV", process.env);
+  // console.log("ENV", process.env);
 
   return axios.get(baseUrl + route, {
     headers: { Authorization: `Bearer ${token}` },

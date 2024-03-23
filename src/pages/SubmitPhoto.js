@@ -21,6 +21,8 @@ const SubmitPhoto = () => {
 
     uploadData.append("imageUrl", e.target.files[0]);
 
+    console.log("Uploading file ===>", e.target.files)
+
     uploadNewPhoto(uploadData)
       .then((response) => {
         setPhoto({ ...photo, imageUrl: response.fileUrl });
