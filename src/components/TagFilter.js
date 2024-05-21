@@ -89,7 +89,7 @@ useEffect(() => {
 }, [allTags, photos])
 
 useEffect(() => {
-    setAllTags((prev) => !prev)
+    // setAllTags((prev) => !prev)
 }, [params.id])
 
 

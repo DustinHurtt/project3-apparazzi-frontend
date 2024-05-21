@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { baseUrl } from "../authService/baseUrl";
@@ -27,14 +27,14 @@ const AllTags = ({ children, allTags }) => {
 
   const params = useParams();
 
-  const fetchPhotos = useCallback(() => {
+  const fetchPhotos = () => {
     axios
       .get(baseUrl + `/photos/${params.id}/tag`)
       .then((res) => {
         setPhotos(res.data.photos);
       })
       .catch((err) => console.log(err));
-  }, [params.id]);
+  };
 
   useEffect(() => {
     fetchPhotos();
