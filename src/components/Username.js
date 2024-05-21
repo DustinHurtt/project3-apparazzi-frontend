@@ -6,6 +6,7 @@ const Username = (props) => {
 
         <div>
             <label>Username</label>
+            <br/>
             <input name='username' onChange={(e)=>props.setUsername(e.target.value)} value={props.username}/>
         </div>
 

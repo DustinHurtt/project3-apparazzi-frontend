@@ -35,18 +35,19 @@ const PhotoDetails = () => {
 
   let id = localStorage.getItem("id");
 
+  
+  const fetchPhoto = () => {
+    get(`/photos/${params.id}/details`)
+    .then((res) => {
+      console.log("This is the photo", res.data)
+      setPhoto(res.data.result);
+    })
+    .catch((err) => console.log(err));
+  };
+  
   useEffect(() => {
     fetchPhoto();
   }, []);
-
-  const fetchPhoto = () => {
-    get(`/photos/${params.id}/details`)
-      .then((res) => {
-        console.log("This is the photo", res.data)
-        setPhoto(res.data.result);
-      })
-      .catch((err) => console.log(err));
-  };
 
   const deletePhoto = () => {
     post(`/photos/${params.id}/delete`)

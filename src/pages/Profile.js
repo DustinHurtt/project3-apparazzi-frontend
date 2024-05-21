@@ -33,7 +33,7 @@ const Profile = () => {
       <Link to="/edit-profile">Edit Profile</Link>
 
       <div className="columnated">
-        {[...photos].reverse().map((photo) => {
+        {photos && [...photos].reverse().map((photo) => {
           return (
             <div className="direction" key={photo._id}>
               <Photo photo={photo} className={"imageGroup"} />

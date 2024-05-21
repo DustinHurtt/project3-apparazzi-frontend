@@ -6,7 +6,8 @@ const ConfirmPassword = (props) => {
 
         <div>
             <label>Confirm Password</label>
-            <input type="password" name='confirmPassword' onChange={(e)=>props.setConfirmPassword(e.target.value)} value={props.confirmPassword}/>
+            <br />
+            <input type="password" name='confirmPassword' onChange={(e)=>props.setConfirmPassword(e.target.value)} value={props.confirmPassword} placeholder="Password"/>
         </div>
 
     )

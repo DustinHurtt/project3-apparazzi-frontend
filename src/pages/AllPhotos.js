@@ -6,22 +6,22 @@ import Photo from "../components/Photo";
 const AllPhotos = () => {
   const [photos, setPhotos] = React.useState([]);
 
+  
+  let getPhotos = () => {
+    axios
+    .get(baseUrl + "/photos/all-photos")
+    .then((results) => {
+      setPhotos(results.data.photos);
+    })
+    
+    .catch((err) => {
+      console.log(err.message);
+    });
+  };
+  
   React.useEffect(() => {
     getPhotos();
   }, []);
-
-  let getPhotos = () => {
-    axios
-      .get(baseUrl + "/photos/all-photos")
-      .then((results) => {
-        setPhotos(results.data.photos);
-      })
-
-      .catch((err) => {
-        console.log(err.message);
-      });
-  };
-
   return (
     <div>
       <section className="main">

@@ -6,7 +6,8 @@ const Password = (props) => {
 
         <div>
             <label>Password</label>
-            <input type="password" name='password' onChange={(e)=>props.setPassword(e.target.value)} value={props.password}/>
+            <br/>
+            <input type="password" name='password' onChange={(e)=>props.setPassword(e.target.value)} value={props.password} placeholder="Password"/>
         </div>
 
     )

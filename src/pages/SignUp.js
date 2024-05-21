@@ -3,8 +3,9 @@ import ConfirmPassword from "../components/ConfirmPassword";
 import Email from "../components/Email";
 import Password from "../components/Password";
 import Username from "../components/Username";
+import PhoneNumber from "../components/PhoneNumber";
 import { post } from "../authService/authService";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   let [username, setUsername] = React.useState("");
@@ -12,6 +13,7 @@ const SignUp = () => {
   let [password, setPassword] = React.useState("");
   let [confirmPassword, setConfirmPassword] = React.useState("");
   let [errormessage, setErrormessage] = React.useState("");
+  let [phoneNumber, setPhoneNumber] = React.useState("");
 
   const navigate = useNavigate();
 
@@ -52,12 +54,19 @@ const SignUp = () => {
     <div className="homeLanding">
       <div className="homeContainer">
         <form onSubmit={checkError}>
+          <h1>APPARAZZI</h1>
+          <br/>
           <Username setUsername={setUsername} />
           <Email setEmail={setEmail} />
           <Password setPassword={setPassword} />
           <ConfirmPassword setConfirmPassword={setConfirmPassword} />
+          <PhoneNumber setPhoneNumber={setPhoneNumber} />
 
-          <button>Submit</button>
+          <br />
+          <button className="submitButton">Sign Up</button>
+          <br/>
+
+          <p>Already have an account?<Link to="/login">Log In</Link></p>
 
           <p>{errormessage}</p>
         </form>

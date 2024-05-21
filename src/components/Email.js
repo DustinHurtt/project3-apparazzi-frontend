@@ -6,7 +6,8 @@ const Email = (props) => {
 
         <div>
             <label>Email</label>
-            <input name='email' onChange={(e)=>props.setEmail(e.target.value)} value={props.email}/>
+            <br />
+            <input type="text" name='email' onChange={(e)=>props.setEmail(e.target.value)} value={props.email} placeholder="Example@email.com"/>
         </div>
 
     )

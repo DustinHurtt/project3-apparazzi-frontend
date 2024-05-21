@@ -8,7 +8,7 @@ const TheseTags = (props) => {
         {props.photo.tags &&
           props.photo.tags.map((tag) => {
             return (
-              <span class="likes" key={tag}>
+              <span className="likes" key={tag}>
                 #<Link to={`/${tag.trim()}/tag`}>{tag}</Link>{" "}
               </span>
             );

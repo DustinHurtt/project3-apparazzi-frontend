@@ -1,7 +1,7 @@
 import React from "react";  
 import TheseTags from "./TheseTags";
 import { Link } from "react-router-dom";
-import { DateTime, Interval } from "luxon"
+import { DateTime } from "luxon"
 
 const Photo = (props) => {
 
