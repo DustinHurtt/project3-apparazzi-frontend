@@ -23,7 +23,7 @@ const TagFilter = ({ children, allTags, setAllTags }) => {
   const [rawPhotos, setRawPhotos] = useState([])
   const [photoIndex, setPhotoIndex] = useState(0)
   const [points, setPoints] = useState([])
-  const [map, setMap] = useState({
+  const [map, _] = useState({
     lat: 25.80051750601982,
     lng: -80.19831072619859,
     zoom: 13,
@@ -80,7 +80,7 @@ const TagFilter = ({ children, allTags, setAllTags }) => {
 useEffect(() => {
     fetchPhotos();
     window.scrollTo(0, 0);
-}, [allTags, params]);
+}, [allTags, params, fetchPhotos]);
 
 useEffect(() => {
   if(photos.length){

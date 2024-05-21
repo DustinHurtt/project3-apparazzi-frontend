@@ -23,7 +23,7 @@ const PhotoDetails = () => {
   const [comment, setComment] = useState({
     comment: "",
   });
-  const [map, setMap] = useState({
+  const [map, _] = useState({
     lat: "",
     lng: "",
     zoom: 13,
@@ -47,7 +47,7 @@ const PhotoDetails = () => {
   
   useEffect(() => {
     fetchPhoto();
-  }, []);
+  });
 
   const deletePhoto = () => {
     post(`/photos/${params.id}/delete`)
